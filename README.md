@@ -3,9 +3,10 @@
 </p>
 
 <h1>On-premises Active Directory Deployed in the Cloud (Azure)</h1>
-Purpose: 
+<h2>Purpose</h2> 
 
 Active Directory simplifies network management, enhances security, and streamlines user and resource administration in Windows-based networks. It provides a structured and organized approach to managing resources, ensuring efficient network operations.
+
 This tutorial outlines the implementation of on-premises Active Directory within Azure Virtual Machines.<br />
 
 
