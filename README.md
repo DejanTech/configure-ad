@@ -74,6 +74,9 @@ Client-1
 <img src="https://i.imgur.com/bFQKoDr.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
+<img src="https://i.imgur.com/QMvpkON.png" height="50%" width="50%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
 1. Login to DC-1 and install Active Directory Domain Services: Click start >Server Manager >Add Roles and Features (to install AD) >Next >Next >check Acitive Domain Services Features box >Next >Next >Install >Close. 
 2. Promote as a DC; Setup a new forest as dejab.com: click the hazard symbol Ppromote this server to a domain controller  >check Add a new forest (dejab.com) >Next >Create password >Next >Next >Install
 THIS IS HOW WE FINISH INSTALLING ACTIVE DIRECTORY AND TURN THE SERVER INTO A DOMAIN CONTROLLER.
