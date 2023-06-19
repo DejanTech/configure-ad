@@ -76,7 +76,9 @@ Client-1
 <p>
 1. Login to DC-1 and install Active Directory Domain Services: Click start >Server Manager >Add Roles and Features (to install AD) >Next >Next >check Acitive Domain Services Features box >Next >Next >Install >Close. 
 2. Promote as a DC; Setup a new forest as dejab.com: click the hazard symbol Ppromote this server to a domain controller  >check Add a new forest (dejab.com) >Next >Create password >Next >Next >Install
-THIS IS HOW WE FINISH INSTALLING ACTIVE DIRECTORY AND TURN THE SERVER INTO A DOMAIN CONTROLLER 
+THIS IS HOW WE FINISH INSTALLING ACTIVE DIRECTORY AND TURN THE SERVER INTO A DOMAIN CONTROLLER.
+Restart and then log back into DC-1 as user: dejab.com\labuser (FQDN (Fully Qualified Domain Name)) 
+
 
 
 </p>
