@@ -28,10 +28,13 @@ Active Directory simplifies network management, enhances security, and streamlin
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+- Step 1: Setup Resources in Azure
+- Step 2: Ensure Connectivity between the client and Domain Controller
+- Step 3: Install Active Directory
+- Step 4: Create an Admin and Normal User Account in AD
+- Step 5: Join Client-1 to the domain (dejab.com)
+- Step 6: Setup Remote Desktop for non-administrative users on Client-1
+- Step 7: Create a bunch of additional users and attempt to log into client-1 with one of the users
 
 <h2>Deployment and Configuration Steps</h2>
 
