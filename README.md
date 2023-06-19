@@ -10,10 +10,6 @@ This tutorial outlines the implementation of on-premises Active Directory within
 Active Directory simplifies network management, enhances security, and streamlines user and resource administration in Windows-based networks. It provides a structured and organized approach to managing resources, ensuring efficient network operations.
 
 
-
-
-
-
 <h2>Environments and Technologies Used</h2>
 
 - Microsoft Azure (Virtual Machines/Compute)
@@ -39,7 +35,7 @@ Active Directory simplifies network management, enhances security, and streamlin
 <h2>Step 1: Setup Resources in Azure</h2>
 
 <p>
-<img src="https://i.imgur.com/A1PLq1r.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/A1PLq1r.png" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 1. Create the Domain Controller VM (Windows Server 2022) named “DC-1.” Take note of the Resource Group and Virtual Network (Vnet) that
@@ -52,19 +48,36 @@ Active Directory simplifies network management, enhances security, and streamlin
 <br />
 <h2>Step 2: Ensure Connectivity between the client and Domain Controller</h2>
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Domain Controller
+</p>
+<img src="https://i.imgur.com/B2poN9i.png" height="100%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Client-1
+</p>
+<img src="https://i.imgur.com/x41LmgA.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 1. Login to Client-1 with Remote Desktop and ping DC-1’s private IP address with ping -t <ip address> (perpetual ping)
 2. Login to the Domain Controller and enable ICMPv4 in on the local windows Firewall:
-  click start >search: Windows Defender Firewall with Advanced Security >Inbound Rules >protocol -ICMPv4 (protocol ping uses)- right click Core Network Diagnostic-ICMP Echo Request (ICMPv4-in) >Enable.
+  click start >search: Windows Defender Firewall with Advanced Security >Inbound Rules >protocol -ICMPv4 (protocol ping uses)- right click Core Networking Diagnostic - ICMP Echo Request (ICMPv4-in) >Enable.
+3. Check back at Client-1 to see the ping succeed 
 </p>
 <br />
+<h2>Step 3: Install Active Directory</h2>
+<p>
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/AND7Aty.png" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+<img src="https://i.imgur.com/bFQKoDr.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+1. Login to DC-1 and install Active Directory Domain Services: Click start >Server Manager >Add Roles and Features (to install AD) >Next >Next >check Acitive Domain Services Features box >Next >Next >Install >Close. 
+2. Promote as a DC; Setup a new forest as dejab.com: click the hazard symbol Ppromote this server to a domain controller  >check Add a new forest (dejab.com) >Next >Create password >Next >Next >Install
+THIS IS HOW WE FINISH INSTALLING ACTIVE DIRECTORY AND TURN THE SERVER INTO A DOMAIN CONTROLLER 
+
+
 </p>
 <br />
