@@ -97,6 +97,27 @@ click start >search: Windows Defender Firewall with Advanced Security >Inbound R
 <h2>Step 4: Create an Admin and Normal User Account in AD</h2>
 </p>
 <br />
-Create an Organizational Unit called “_ADMINS”: 
+<p>
+<img src="https://i.imgur.com/GBSESIx.png" height="50%" width="50%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/EYQewW7.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+Create an Organizational Unit called “_ADMINS" and  "_EMPLOYEES”: 
 
-- Right click dejab.com >New >Organizational Unit >type "_ADMINS" >Ok 
+1. Right click dejab.com >New >Organizational Unit >type "_ADMINS" >Ok (repeat steps to create _EMPLOYEES)
+2. Create a new employee named “Jane Doe” with the username of “jane_admin”
+  *right click inside the empty space *click New >User (enter Name: Jane Doe & User logon name: jane_admin) >Next >Set password *check password never expires >Next >Finish
+3. Add jane_admin to the “Domain Admins” Security Group: right click >Properties >Member of >Add: type: domain >Check Name >Domain Admin >Ok >Apply >Ok
+4. Log out/close the Remote Desktop connection to DC-1 and log back in as “dejab.com\jane_admin”
+
+<h2>Step 5: Join Client-1 to your domain (dejab.com)
+</h2>
+<p>
+<img src="https://i.imgur.com/Jk0CB4h.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+From the Azure portal click: Client-1 >Networking >Networking Interface (private IP address) >DNS Servers >Custom: (paste DC-I IP address-save) click VM> Client 1> Restart
+Login Client 1>Command Prompt>whoami>hostname>ipconfig /all (verify DNS server IP address update (DC-1 Private IP#))
+
+
+
