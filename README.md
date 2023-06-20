@@ -127,7 +127,7 @@ Create an Organizational Unit called “_ADMINS" and  "_EMPLOYEES”:
 
 1. From the Azure portal click: Client-1 >Networking >Networking Interface (private IP address) >DNS Servers >Custom: (paste DC-I IP address-save) click Virtual Machine >Client 1 >Restart.
    Login to Client-1 (Remote Desktop) as the original local admin (dejab.com\labuser)
-2. Command Prompt: whoami; hostname; ipconfig /all (verify DNS server IP address update (DC-1 Private IP address))
+2. Command Prompt: ipconfig /all (verify DNS server IP address update (DC-1 Private IP address))
 3. Join Client-1 to the domain: right click >Start >System >Rename this PC (Advance) >Change > check: Domain, type: dejab.com >Ok
  Login dejab.com/jane_admins >Ok (computer will restart)     
 4. Login to the Domain Controller (Remote Desktop) and verify Client-1 shows up in Active Directory Users and Computers (ADUC) inside the “Computers” container on the root of the domain.
