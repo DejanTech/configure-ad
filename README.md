@@ -30,7 +30,7 @@ Active Directory simplifies network management, enhances security, and streamlin
 - Step 4: Create an Admin and Normal User Account in AD
 - Step 5: Join Client-1 to the domain (dejab.com)
 - Step 6: Setup Remote Desktop for non-administrative users on Client-1
-- Step 7: Create a bunch of additional users and attempt to log into client-1 with one of the users
+- Step 7: Attempt to log into Client-1 with one of the users
 
 <h2>Step 1: Setup Resources in Azure</h2>
 
@@ -136,8 +136,31 @@ Create an Organizational Unit called “_ADMINS" and  "_EMPLOYEES”:
 </h2>
 
 <p>
-<img src="" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/nzk52xL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
+<p>
+<img src="https://i.imgur.com/I7LglvN.png" height="50%" width="50%" alt="Disk Sanitization Steps"/>
+</p>
+
+1. Log into Client-1 as dejab.com\jane_admins right click: >Start >System >"Remote Desktop”, select > "user that can remotely access the PC" >add, type: domain users >check names >Ok >Ok 
+2. Go to DC-1 to see changes in Active Directory Domain Users Properties
+   Click >Tools >Active Directory Users & Computers >dejab.com >Users >Domain Users >Members to 
+
+<h2>Step 7: Attempt to log into Client-1 with one of the Users
+</h2>
+
+<p>
+<img src="https://i.imgur.com/b22pq1K.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+
+1. Login to DC-1 as jane_admin
+2. Open PowerShell_ise as an administrator: right click >run, type: Powershell_ise (open as admin), click: >New File, paste the contents of the script into it
+3. Run the script and observe the accounts being created
+4. Attempt to log into Client-1 with one of the accounts
+
+
+
+
 
 
 
