@@ -153,10 +153,15 @@ Create an Organizational Unit called “_ADMINS" and  "_EMPLOYEES”:
 <img src="https://i.imgur.com/b22pq1K.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 
+<p>
+<img src="https://i.imgur.com/UDXyMiH.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+
 1. Login to DC-1 as jane_admin
 2. Open PowerShell_ise as an administrator: right click >run, type: Powershell_ise (open as admin), click: >New File, paste the contents of the script into it
 3. Run the script and observe the accounts being created
-4. Attempt to log into Client-1 with one of the accounts
+4. Open ADUC and observe the accounts in the appropriate OU
+5. Attempt to log into Client-1 with one of the accounts
 
 
 
