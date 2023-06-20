@@ -106,9 +106,12 @@ click start >search: Windows Defender Firewall with Advanced Security >Inbound R
 Create an Organizational Unit called “_ADMINS" and  "_EMPLOYEES”: 
 
 1. Right click dejab.com >New >Organizational Unit >type "_ADMINS" >Ok (repeat steps to create _EMPLOYEES)
+   
 2. Create a new employee named “Jane Doe” with the username of “jane_admin”
   *right click inside the empty space *click New >User (enter Name: Jane Doe & User logon name: jane_admin) >Next >Set password *check box: "password never expires" >Next >Finish
+   
 3. Add jane_admin to the “Domain Admins” Security Group: right click >Properties >Member of >Add: type: domain >Check Name >Domain Admin >Ok >Apply >Ok
+   
 4. Log out/close the Remote Desktop connection to DC-1 and log back in as “dejab.com\jane_admin”
 
 <h2>Step 5: Join Client-1 to your domain (dejab.com)
@@ -125,11 +128,13 @@ Create an Organizational Unit called “_ADMINS" and  "_EMPLOYEES”:
 <img src="https://i.imgur.com/1MJa51s.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 
-1. From the Azure portal click: Client-1 >Networking >Networking Interface (private IP address) >DNS Servers >Custom: (paste DC-I IP address-save) click Virtual Machine >Client 1 >Restart.
-   Login to Client-1 (Remote Desktop) as the original local admin (dejab.com\labuser)
+1. From the Azure portal click: Client-1 >Networking >Networking Interface (private IP address) >DNS Servers >Custom: (paste DC-I IP address-save) click Virtual Machine >Client 1 >Restart. Login to Client-1 (Remote Desktop) as the original local admin (dejab.com\labuser)
+   
 2. Command Prompt: ipconfig /all (verify DNS server IP address update (DC-1 Private IP address))
+   
 3. Join Client-1 to the domain: right click >Start >System >Rename this PC (Advance) >Change > check: Domain, type: dejab.com >Ok
- Login dejab.com/jane_admins >Ok (computer will restart)     
+ Login dejab.com/jane_admins >Ok (computer will restart)
+  
 4. Login to the Domain Controller (Remote Desktop) and verify Client-1 shows up in Active Directory Users and Computers (ADUC) inside the “Computers” container on the root of the domain.
 
 <h2>Step 6: Setup Remote Desktop for Non-administrative users on Client-1
