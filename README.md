@@ -38,10 +38,14 @@ Active Directory simplifies network management, enhances security, and streamlin
 <img src="https://i.imgur.com/A1PLq1r.png" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
+  
 1. Create the Domain Controller VM (Windows Server 2022) named “DC-1.” Take note of the Resource Group and Virtual Network (Vnet) that
   get created at this time. 
+
 2. Set Domain Controller’s NIC Private IP address to be static: Click DC-1> Networking> Network Interface> IPconfig> Ipconfig1 >static >Save
+
 3. Create the Client VM (Windows 10) named “Client-1”. Use the same Resource Group and Vnet that was created in Step 1.a
+
 4. Ensure that both VMs are in the same Vnet (you can check the topology with Network Watcher
 
 </p>
@@ -59,8 +63,10 @@ Client-1
 </p>
 <p>
 1. Login to Client-1 with Remote Desktop and ping DC-1’s private IP address with ping -t <ip address> (perpetual ping)
+
 2. Login to the Domain Controller and enable ICMPv4 in on the local windows Firewall:
-  click start >search: Windows Defender Firewall with Advanced Security >Inbound Rules >protocol -ICMPv4 (protocol ping uses)- right click Core Networking Diagnostic - ICMP Echo Request (ICMPv4-in) >Enable.
+click start >search: Windows Defender Firewall with Advanced Security >Inbound Rules >protocol -ICMPv4 (protocol ping uses)- right click Core Networking Diagnostic - ICMP Echo Request (ICMPv4-in) >Enable.
+
 3. Check back at Client-1 to see the ping succeed 
 </p>
 <br />
@@ -77,12 +83,20 @@ Client-1
 <img src="https://i.imgur.com/QMvpkON.png" height="50%" width="50%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-1. Login to DC-1 and install Active Directory Domain Services: Click start >Server Manager >Add Roles and Features (to install AD) >Next >Next >check Acitive Domain Services Features box >Next >Next >Install >Close. 
-2. Promote as a DC; Setup a new forest as dejab.com: click the hazard symbol Ppromote this server to a domain controller  >check Add a new forest (dejab.com) >Next >Create password >Next >Next >Install
-THIS IS HOW WE FINISH INSTALLING ACTIVE DIRECTORY AND TURN THE SERVER INTO A DOMAIN CONTROLLER.
-Restart and then log back into DC-1 as user: dejab.com\labuser (FQDN (Fully Qualified Domain Name)) 
+  
+1. Login to DC-1 and install Active Directory Domain Services: Click Start >Server Manager >Add Roles and Features (to install AD) >Next >Next >check Acitive 
+   Domain Services Features box >Next >Next >Install >Close. 
+
+2. Promote as a DC; Setup a new forest as dejab.com: click the hazard symbol Ppromote this server to a domain controller  >check Add a new forest "dejab.com" >Next >Create password >Next >Next >Install
+
+   *  THIS IS HOW WE FINISH INSTALLING ACTIVE DIRECTORY AND TURN THE SERVER INTO A DOMAIN CONTROLLER.
+
+3. Restart and then log back into DC-1 as user: dejab.com\labuser (FQDN (Fully Qualified Domain Name)) 
 
 
-
+<h2>Step 4: Create an Admin and Normal User Account in AD</h2>
 </p>
 <br />
+Create an Organizational Unit called “_ADMINS”: 
+
+- Right click dejab.com >New >Organizational Unit >type "_ADMINS" >Ok 
