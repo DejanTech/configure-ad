@@ -87,7 +87,7 @@ click start >search: Windows Defender Firewall with Advanced Security >Inbound R
 1. Login to DC-1 and install Active Directory Domain Services: Click Start >Server Manager >Add Roles and Features (to install AD) >Next >Next >check Acitive 
    Domain Services Features box >Next >Next >Install >Close. 
 
-2. Promote as a DC; Setup a new forest as dejab.com: click the hazard symbol Ppromote this server to a domain controller  >check Add a new forest "dejab.com" >Next >Create password >Next >Next >Install
+2. Promote as a DC; Setup a new forest as dejab.com: click the hazard symbol Promote this server to a domain controller  >check Add a new forest "dejab.com" >Next >Create password >Next >Next >Install
 
    *  THIS IS HOW WE FINISH INSTALLING ACTIVE DIRECTORY AND TURN THE SERVER INTO A DOMAIN CONTROLLER.
 
