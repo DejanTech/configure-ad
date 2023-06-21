@@ -165,7 +165,7 @@ Create an Organizational Unit called “_ADMINS" and  "_EMPLOYEES”:
 1. Login to DC-1 as jane_admin
 2. Open PowerShell_ise as an administrator: right click >run, type: Powershell_ise (open as admin), click: >New File, paste the contents of the script into it
 3. Run the script and observe the accounts being created
-4. Open ADUC and observe the accounts in the appropriate OU
+4. Open Active Directory Users & Computers and observe the accounts in the appropriate Organizational Unit
 5. Attempt to log into Client-1 with one of the accounts
 
 
